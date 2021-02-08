@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
-import SearchFunction from './components/searchFunction';
+import SearchFunction from './components/FrontEnd';
 import './App.css';
 
 function App() {

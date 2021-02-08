@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import books from '../assets/books.png';
+import './header.css';
 
 function header() {
   return (
-    <div className="headerOne">
+    <div className="headerOne bg-primary">
       <div className="header-row">
         <div className="header-col1">
           <h1 className="BookHeader"> Books Gallery </h1>

@@ -1,0 +1,35 @@
+.headerOne{
+    /* background-color: rgba(100, 237, 225, 0.938); */
+    text-align: center;
+    height: 150px;
+    width: 100%;
+  }
+ 
+  .header-row:after {
+   content: "";
+   display: table;
+   clear: both;
+ }
+ 
+ .header-col1{
+   float: left;
+   width: 40%;
+   padding: 10px;
+ }
+ 
+ .header-col2{
+   float: left;
+   width: 60%;
+   padding: 10px;
+ }
+ .BookHeader{
+   text-align: center;
+   color:firebrick;
+   text-shadow: gray;
+   font-size: 4.9vw;
+ }
+ .responsive {
+   width: 100%;
+   max-width: 400px;
+   height: auto;
+ }

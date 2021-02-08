@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function Search(query, pageNumber) {
+export default function useSearch(query, pageNumber) {
   const [books, setBooks] = useState([]);
   const [hasMore, setHasMore] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -21,14 +21,11 @@ export default function Search(query, pageNumber) {
           url: 'http://openlibrary.org/search.json',
           params: { q: query, page: pageNumber },
         });
-        console.log(res);
-        setBooks((prevBooks) => [...prevBooks, ...res.data.docs,
-        ]);
+        setBooks((prevBooks) => [...new Set([...prevBooks, ...res.data.docs,
+        ])]);
         setHasMore(res.data.docs.length > 0);
         setLoading(false);
       } catch (e) {
-      // eslint-disable-next-line no-console
-        console.log(e);
         setError(true);
         setLoading(false);
       }

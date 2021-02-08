@@ -3,16 +3,16 @@ import React, { useState, useRef, useCallback } from 'react';
 
 import { DebounceInput } from 'react-debounce-input';
 import Card from './card';
-import Search from './search';
+import useSearch from './FetchData';
 import Header from './header';
 
 export default function SearchFunction() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState('test');
   const [pageNumber, setPageNumber] = useState(1);
 
   const {
     books, hasMore, loading, error,
-  } = Search(query, pageNumber);
+  } = useSearch(query, pageNumber);
 
   const observer = useRef();
   const lastBookElementRef = useCallback((node) => {
@@ -36,7 +36,7 @@ export default function SearchFunction() {
       <Header />
       <h5 className="search">
         Which Book You Are Looking For??:
-        <DebounceInput debounceTimeout={1000} onChange={handleSearch} placeholder="Enter the book name" />
+        <DebounceInput data-testid="input-query" debounceTimeout={1000} onChange={handleSearch} placeholder="Enter the book name" />
       </h5>
       <div className="row">
         {books.map((book, index) => {

@@ -1,13 +1,14 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import PropTypes from 'prop-types';
+import './card.css';
 
 const Card = ({
   title, author, publishYear,
 }) => (
   <div className="col-sm-4">
     <div className="card">
-      <h5 className="card-header bg-info ">
+      <h5 className="card-header bg-info">
         Title :
         {title.substring(0, 25)}
         ...
